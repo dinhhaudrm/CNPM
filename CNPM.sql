@@ -1,4 +1,5 @@
-﻿create database CNPM
+﻿---Test GitHub------
+create database CNPM
 go
 use CNPM
 go
