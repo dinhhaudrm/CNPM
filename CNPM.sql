@@ -93,4 +93,12 @@ create table BangLuong
 	constraint PK_BangLuong primary key (MaNV,Thang)
 )
 go
+--suathongtinnhanvien
+create proc SuaNhanVien
+@MaNV varchar(100), @HoTen nvarchar(100), @NgaySinh date, @Phai nvarchar(10),
+@SDT varchar(11), @DiaChi nvarchar(100), @MaHopDong varchar(100)
+as
+begin
+	update NhanVien set HoTen=@HoTen, NgaySinh=@NgaySinh, Phai=@Phai, SDT=@SDT, DiaChi=@DiaChi, MaHopDong=@MaHopDong where MaNV=@MaNV
+end
 
