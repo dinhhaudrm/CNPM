@@ -134,11 +134,4 @@ go
 --go
 --create trigger SINHID on NhanVien
 
---for insert
---as
---begin
---	declare @IDCuoi varchar(100)
---	set @IDCuoi = (select TOP 1 MaNV from NhanVien )
---	update NhanVien set MaNV=dbo.IDTD (@IDCuoi,'NV_',6) where MaNV=''
---end
---go
+
