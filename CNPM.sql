@@ -93,6 +93,45 @@ create table BangLuong
 	constraint PK_BangLuong primary key (MaNV,Thang)
 )
 go
-
+--suathongtinnhanvien
+create proc SuaNhanVien
+@MaNV varchar(100), @HoTen nvarchar(100), @NgaySinh date, @Phai nvarchar(10),
+@SDT varchar(11), @DiaChi nvarchar(100), @MaHopDong varchar(100)
+as
+begin
+	update NhanVien set HoTen=@HoTen, NgaySinh=@NgaySinh, Phai=@Phai, SDT=@SDT, DiaChi=@DiaChi, MaHopDong=@MaHopDong where MaNV=@MaNV
+end
+go
+--xoanhanvien
+create proc XoaNhanVien
+@MaNV varchar(100), @HoTen nvarchar(100), @NgaySinh date, @Phai nvarchar(10),
+@SDT varchar(11), @DiaChi nvarchar(100), @MaHopDong varchar(100)
+as
+begin
+	delete NhanVien where HoTen=@HoTen and NgaySinh=@NgaySinh and Phai=@Phai and SDT=@SDT and DiaChi=@DiaChi and MaHopDong=@MaHopDong
+end
+go
+--IDTD
+--create function IDTD(@IDCuoi varchar(100), @TienTo varchar(20), @SL int)
+--returns varchar(100)
+--as
+--begin
+--	if (@IDCuoi='')
+--	set @IDCuoi = @TienTo + REPLICATE (0, @SL - LEN(@TienTo))
+--		--replicate:Lặp lại một giá trị chuỗi một số lần chỉ định.
+--		--len:Trả về số lượng ký tự của biểu thức chuỗi đã chỉ định, không bao gồm dấu cách.
+--	declare @SLNextID int, @NextID varchar(100)
+--	set @IDCuoi =LTRIM(RTRIM(@IDCuoi))cái ID
+--		--ltrim:Trả về một biểu thức ký tự sau khi nó loại bỏ khoảng trống hàng đầu.
+--		--rtrim:Trả về một chuỗi ký tự sau khi cắt tất cả các dấu cách.
+--	set @SLNextID = REPLACE( @IDCuoi,@TienTo,'') + 1
+--	--replace:thay thế tất cả các lần xuất hiện của chuỗi con a thành chuỗi con b mới trong một chuỗi cho trước.
+--	set @SL = @SL-LEN(@TienTo)
+--	set @NextID = @TienTo+REPLICATE(0,@SL-LEN(@TienTo))
+--	set @NextID = @TienTo+RIGHT(REPLICATE( 0, @SL) + CONVERT(varchar(MAX), @SLNextID) ,@SL)
+--	return @NextID
+--end
+--go
+--create trigger SINHID on NhanVien
 
 
