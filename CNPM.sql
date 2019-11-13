@@ -133,5 +133,11 @@ go
 --end
 --go
 --create trigger SINHID on NhanVien
+insert NhanVien 
+values ('TCH0001',N'Nguyễn Đình Hậu',null,null,null,null,null)
+insert NhanVien 
+values ('TCH0002',N'Nguyễn Đình Hậu',null,null,null,null,null)
+insert NhanVien 
+values ('TCH0003',N'Nguyễn Đình Hậu',null,null,null,null,null)
 
 
