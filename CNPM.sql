@@ -93,4 +93,9 @@ create table BangLuong
 	constraint PK_BangLuong primary key (MaNV,Thang)
 )
 go
-
+--Thêm nhân viên--
+--CREATE TRIGGER ADD_Nhanvien
+--on dbo.NhanVien
+--after insert 
+--as cái này anh Hậu viết xong cho chạy luôn rồi test các thứ coi đúng không
+--xong rồi nếu ok thì tô đen lại hết rôi comment
