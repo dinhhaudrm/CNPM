@@ -93,3 +93,4 @@ create table BangLuong
 	constraint PK_BangLuong primary key (MaNV,Thang)
 )
 go
+----hhhhhh
